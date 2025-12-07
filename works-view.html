@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&see portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+Antique&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/works-view.css">
+    <link rel="stylesheet" href="./css/hamburger.css">
+   
+
+    <link rel="stylesheet" href="https://use.typekit.net/buk8mdm.css">
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'ebc1ehs',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){
+          h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";
+        },config.scriptTimeout),
+        tk=d.createElement("script"),f=false,
+        s=d.getElementsByTagName("script")[0],a;
+        h.className+=" wf-loading";
+        tk.src='https://use.typekit.net/'+config.kitId+'.js';
+        tk.async=true;
+        tk.onload=tk.onreadystatechange=function(){
+          a=this.readyState;
+          if(f||a&&a!="complete"&&a!="loaded") return;
+          f=true; clearTimeout(t);
+          try{Typekit.load(config)}catch(e){}
+        };
+        s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+</head>
+
+<body>
+  <div class="header_bg"></div>
+
+  <div class="page-wrapper">
+
+<header id="header">
+    <div class="header_inner">
+        <h1 class="logo">
+            <a href="index.html">
+                <img src="./picture/logo 58@2x-8.png" alt="&see" />
+            </a>
+        </h1>
+
+        
+        <nav class="header_nav">
+            <ul>
+                <li><a href="./index.html">home</a></li>
+                <li><a href="./about-view.html">about</a></li>
+                <li><a href="./works-view.html">works</a></li>
+                <li><a href="./photo.html">photo</a></li>
+                <li><a href="./contact.html" class="contact-link">contact</a></li>
+            </ul>
+        </nav>
+
+         <!-- SP：ハンバーガー -->
+            <div class="hamburger">
+              <img src="./picture/hamburgermenu.svg" alt="menu" />
+            </div>
+          </div>
+        </header>
+
+        <!-- SPメニュー -->
+        <div class="sp-menu">
+          <!-- バツ -->
+          <div class="close-btn">&times;</div>
+
+          <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about-view.html">about</a></li>
+            <li><a href="works-view.html">works</a></li>
+            <li><a href="photo.html">photo</a></li>
+            <li><a href="contact.html" class="sp-contact-link">contact</a></li>
+          </ul>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+<section class="works-section">
+
+  
+
+  <div class="works-header">
+    <div class="works-line"></div>
+    <div class="works-title">
+      <h2>my works</h2>
+      <p>制作実績</p>
+    </div>
+  </div>
+
+<div class="works-category">
+  <button class="category-btn active" data-category="all">all</button>
+  <button class="category-btn" data-category="web">web site</button>
+  <button class="category-btn" data-category="banner">banner</button>
+  <button class="category-btn" data-category="graphic">graphic</button>
+</div>
+
+</section>
+
+
+
+
+
+<section class="works-list">
+
+  <!-- 作品1 -->
+  <div class="work-card" data-category="web">
+    <p class="work-type">web site</p>
+    <h3 class="work-title">life hair design</h3>
+    <a href="./works/lifehair.html">
+      <img src="./picture/works-view1.jpg" alt="life hair design">
+    </a>
+  </div>
+
+  <!-- 作品2（修正済み） -->
+  <div class="work-card" data-category="web">
+    <p class="work-type">web site</p>
+    <h3 class="work-title">design cafe</h3>
+    <a href="./works/designcafe.html">
+      <img src="./picture/works-view2.jpg" alt="design cafe">
+    </a>
+  </div>
+
+  <!-- 作品3 -->
+ <div class="work-card" data-category="web">
+    <p class="work-type">web site</p>
+    <h3 class="work-title">WORKERS</h3>
+    <a href="./works/workers.html">
+      <img src="./picture/works-view3.jpg" alt="WORKERS">
+    </a>
+  </div>
+
+  <!-- 作品4 -->
+  <div class="work-card" data-category="banner">
+    <p class="work-type">banner</p>
+    <h3 class="work-title">ice cream【期間限定】</h3>
+    <a href="./works/icecream.html">
+      <img src="./picture/works-view4.jpg" alt="ice cream">
+    </a>
+  </div>
+
+   <!-- 作品6 -->
+  <div class="work-card" data-category="banner">
+    <p class="work-type">banner</p>
+    <h3 class="work-title">新発売 激旨バーガー</h3>
+    <a href="./works/hamburger1.html">
+      <img src="./picture/works-view6.jpg" alt="バーガー2">
+    </a>
+  </div>
+
+  <!-- 作品5 -->
+  <div class="work-card" data-category="banner">
+    <p class="work-type">banner</p>
+    <h3 class="work-title">新発売 激旨バーガー</h3>
+    <a href="./works/hamburger2.html">
+      <img src="./picture/works-view5.jpg" alt="バーガー">
+    </a>
+  </div>
+
+ 
+
+  <!-- 作品7 -->
+  <div class="work-card" data-category="banner">
+    <p class="work-type">banner</p>
+    <h3 class="work-title">スマホ学割プラン</h3>
+    <a href="./works/gakuwari.html">
+      <img src="./picture/works-view7.jpg" alt="学割">
+    </a>
+  </div>
+
+  <!-- coming soon -->
+  <div class="work-card coming" data-category="graphic">
+    <p class="coming_text">coming soon...</p>
+  </div>
+
+
+</section>
+
+
+
+<!-- contact -->
+    <section class="contact">
+  <div class="contact-text">
+    <h2>contact</h2>
+    <p>ご覧いただきありがとうございます。<br/>
+ご依頼・ご相談はこちらから承ります。<br/>
+内容確認後、3日以内にご返答いたしますので<br/>
+お気軽にお問い合わせください。
+</p>
+    <a href="" class="contact-btn">お問い合わせはこちら</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 100" width="100%">
+    <path d="M -102.4 28 Q -22.4 28 57.6 14 Q 217.6 -14 377.6 14 Q 457.6 28 537.6 28 Q 617.6 28 697.6 14 Q 857.6 -14 1017.6 14 Q 1097.6 28 1177.6 28 Q 1257.6 28 1337.6 14 Q 1497.6 -14 1657.6 14 Q 1737.6 28 1817.6 28 L 1280 100 L 0 100 Z" fill="#47b2b2"></path>
+  </svg>
+  <img src="./picture/footer.png" alt="footer" class="footer-wave">
+
+  <div class="footer__inner">
+
+    <div class="footer-top">
+      <div class="sns">
+        <a href="#"><img src="./picture/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="./picture/X.png" alt="X"></a>
+      </div>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="./index.html">home</a></li>
+          <li><a href="./about-view.html">about</a></li>
+          <li><a href="./works-view.html">works</a></li>
+          <li><a href="./photo.html">photo</a></li>
+          <li><a href="./contact.html" class="contact-link">contact</a></li>
+        </ul>
+      </nav>
+    </div> <!-- ← footer-top を閉じる -->
+
+    <p class="copy">© 2025 &see hitomi yoshida portfolio</p>
+
+  </div> <!-- ← footer__inner を閉じる -->
+
+</footer>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/hamburger.js"></script>
+<script src="./js/pagetop.js"></script>
+<script src="./js/filter.js"></script>
+
+
+
+    
+</body>
+</html>

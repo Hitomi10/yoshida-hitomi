@@ -1,0 +1,665 @@
+@charset "utf-8";
+
+
+
+
+  
+
+
+/* バツ用の箱：最初は非表示 */
+.close-icon {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: none;        
+}
+
+/* 斜め線２本 */
+.close-icon::before,
+.close-icon::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 0 0;
+  margin: auto;
+  width: 100%;
+  height: 1.5px;
+  background: #000;
+  transform-origin: center;
+}
+
+.close-icon::before {
+  transform: rotate(45deg);
+}
+
+.close-icon::after {
+  transform: rotate(-45deg);
+}
+
+
+/* ===== SPメニュー（PCでは隠す） ===== */
+.sp-menu {
+  position: fixed;
+
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: #fff;
+  z-index: 3000;
+  padding-top: 120px;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+}
+
+.sp-menu.active {
+  right: 0;
+}
+
+/* バツボタン */
+.sp-menu .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+
+/* ===== タイトル部分 ===== */
+.works-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0 auto;
+  margin-top: 300px;
+}
+
+
+.works-title h2 {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+  margin-top: 34px;
+}
+
+.works-title p {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  margin-top: 5px;
+}
+
+.works-line {
+  width: 583px;
+  height: 1px;
+  background-color: #000;
+}
+
+
+/* ===== カテゴリーボタン ===== */
+.works-category {
+  display: flex;
+  justify-content: center;
+  gap: 44px;
+  margin-top: 204px;
+  padding: 0 20px;
+}
+
+.category-btn {
+  width: 204px;
+  height: 57px;
+  border: 2px solid #000;
+  border-radius: 13px;
+  background: #fff;
+  font-size: 15px;
+  font-family: "Sofia Pro Variable", sans-serif;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category-btn.active {
+  background: #cccccc;
+}
+
+.category-btn:hover {
+  opacity: 0.7;
+}
+
+
+
+/* デフォは全部表示 */
+.work-card {
+  display: block;
+  transition: 0.3s;
+}
+
+/* 非表示用 */
+.hide {
+  display: none !important;
+}
+
+
+/* スマホ */
+@media (max-width: 768px) {
+
+  .works-title h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .works-title p {
+    font-size: 13px;
+    margin: 0;
+  }
+
+
+  /* ▼ カテゴリーエリア */
+  .works-category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 10px;
+    width: 65%;
+    margin: 0 auto 100px;
+    place-items: center;
+    margin-top: 80px;
+  }
+
+  .category-btn {
+    width: 100%;
+    max-width: 150px;
+    height: 48px;
+    font-size: 14px;
+  }
+
+}
+
+
+
+
+
+
+
+
+/* ===== WORKS LIST ===== */
+
+/* 2カラムで揃える */
+.works-list {
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 136px 113px;
+  margin: 298px auto 0;
+  align-items: end;
+  padding: 0 20px;
+}
+
+/* カード */
+.work-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 種類（banner / web site） */
+.work-type {
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  margin-bottom: 3px;
+}
+
+/* タイトル */
+.work-title {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  margin-bottom: 13px;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+
+}
+
+/* coming soon 枠 */
+.coming {
+  width: 100%;
+  min-height: 296px;
+  border: 2px solid #999;
+  position: relative;   
+  box-sizing: border-box;
+}
+
+/* coming soon の文字位置 */
+.coming_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: 0;
+  width: max-content;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+  .coming {
+    width: 100%;
+    max-width: 360px;
+    min-height: 240px; /* ← SP画像と同じ高さ */
+    margin: 0 auto;
+    border: 2px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .coming_text {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  /* 全体を縦並び＋中央寄せ */
+  .works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    max-width: 100%;
+    margin: 100px auto 0;
+    padding: 0 20px;
+  }
+
+  .work-card img {
+    width: auto;      
+    max-width: 360px; 
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .work-type,
+  .work-title {
+    text-align: center;
+  }
+
+  /* タイプ */
+  .work-type {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* タイトル */
+  .work-title {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+ 
+
+  /* 画像（中央揃え） */
+  .work-card img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* coming soon の箱も中央揃え */
+  .coming {
+    width: 360px;
+    height: 240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .coming_text {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+/* ===== contact セクション ===== */
+.contact {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 226px;
+}
+
+.contact-text {
+  max-width: 600px;
+  margin: 264px auto 0;
+  padding: 0 10px;
+}
+
+.contact-text h2 {
+  font-size: 25px;
+  margin-bottom: 47px;
+}
+.contact-text p {
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 2;
+}
+
+.contact-btn {
+  display: inline-block;
+  width: 280px;
+  height: 54px;
+  line-height: 54px;
+  border-radius: 13px;
+  border: 2px solid #000;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+
+  /* ▼ contact セクション全体 */
+  .contact {
+    padding-bottom: 78px;  
+    padding-top: 0px;
+  }
+
+
+  .contact-text h2 {
+    font-size: 20px;
+    margin-bottom: 31px;
+    font-weight: 600;
+  }
+
+ 
+  .contact-text p {
+    font-size: 14px;
+    line-height: 2.14;
+    margin-bottom: 48px;
+  }
+
+    .contact-btn {
+    width: 280px;    
+    height: 64px;      
+    line-height: 64px; 
+    border-radius: 13px;
+    font-weight: 700;
+    margin: 0 auto;  
+  }
+  }
+
+
+
+
+ 
+/* ===== FOOTER ===== */
+.footer {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.footer svg {
+  transform: translateY(10px);
+}
+.footer__inner {
+  background-color: #47b2b2;
+}
+
+
+
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* 高さは自動で比率を保つ */
+  object-fit: none; 
+  z-index: 0;
+  pointer-events: none;
+  object-position: top;
+}
+
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+
+/* === sns・nav・pagetop === */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;  
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  position: relative; 
+}
+
+
+/* SNS */
+.sns a {
+  display: inline-block;
+  margin: 0 10px;
+}
+.sns img {
+  width: 23px;
+  height: 23px;
+  transition: opacity 0.3s;
+}
+.sns img:hover {
+  opacity: 0.7;
+}
+.sns {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+/* ナビ */
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 20px;
+}
+
+.footer-nav a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  font-family: 'Sofia Pro Variable', sans-serif;
+  font-weight: 600; /* Semi Bold */
+}
+.footer-nav {
+  margin-left: 50px;
+}
+
+
+
+
+/* コピーライト */
+.copy {
+  font-size: 12px;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+
+  /* footer 全体を縦並びに */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px; 
+    margin: 0;
+  }
+
+  /* nav（home / about …） */
+  .footer-nav {
+    order: 1;
+    margin: 0 auto;
+  }
+
+
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    gap: 50px;           
+  }
+
+  .footer-nav a {
+    font-size: 20px;        
+  }
+
+ 
+  .sns {
+    order: 2;
+    gap: 70px;
+  }
+
+  .sns img {
+    width: 33px;
+    height: 33px;
+    
+  }
+
+  /* コピーライト */
+  .copy {
+    order: 3;
+    margin-top: -30px;
+  }
+
+
+}
+
+
+
+
+
+
+/* ===== SPメニュー ===== */
+.sp-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84vh;
+  background: #00b4b2;   
+  transition: 0.4s ease;
+  z-index: 9999;
+  padding-top: 120px;
+  text-align: center;
+}
+
+/* 表示時 */
+.sp-menu.active {
+  top: 0;
+}
+
+/* メニュー文字 */
+.sp-menu ul li {
+  margin: 40px 0;
+}
+
+.sp-menu ul li a {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 700;
+}
+
+/* contactだけ色変える */
+.sp-menu .sp-contact-link {
+  color: #eba700 !important;
+}
+
+/* ✨ バツボタン */
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 22px;
+  right: 51px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* SPでハンバーガー出す */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 34px;
+    right: 34px;
+    width: 60px;
+    z-index: 2000;
+    cursor: pointer;
+  }
+
+  .hamburger.open {
+    opacity: 0;
+  }
+
+  
+}

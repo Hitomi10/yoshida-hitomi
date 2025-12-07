@@ -1,0 +1,651 @@
+/* ===============================
+   共通ラッパー
+=============================== */
+.page-wrapper {
+  box-sizing: border-box;
+}
+
+/* ===============================
+   タイトル部分
+=============================== */
+.works-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 170px auto 234px;
+}
+
+.works-title {
+  text-align: center;
+}
+
+.works-title h2 {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.works-title p {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  margin-top: 12px;
+}
+
+.works-line {
+  width: 583px;
+  height: 1px;
+  background-color: #000;
+}
+
+/* ===============================
+   作品タイトル
+=============================== */
+.work-title {
+  text-align: center;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  margin-bottom: 178px;
+}
+
+/* ===============================
+   2カラム
+=============================== */
+.banner-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px; 
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+
+.banner-left img,
+.banner-right img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 左右の最大幅だけ調整する */
+.banner-left {
+  max-width: 600px;
+}
+
+.banner-right {
+  max-width: 400px;
+}
+
+
+/* ===============================
+   SP（幅768px以下）
+   バナー画像を左254px／右178pxで横並び
+=============================== */
+@media (max-width: 768px) {
+
+  .banner-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .banner-left {
+    max-width: 260px; 
+  }
+
+  .banner-right {
+    max-width: 180px;
+  }
+
+  .banner-left img,
+  .banner-right img {
+    width: 100%;
+    height: auto;
+  }
+ 
+}
+
+
+
+
+
+
+/* ===============================
+   詳細ボックス（説明文）
+=============================== */
+.detail-box {
+  max-width: 900px;
+  margin: 120px auto 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  column-gap: 40px;
+  padding: 40px 0;
+  position: relative;
+}
+
+.detail-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(36, 39, 50, 0.3);
+}
+
+.detail-title {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+.detail-text {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .detail-box {
+    margin-top: 60px;
+    padding: 0 20px;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px 0;
+    position: relative;
+  }
+
+  .detail-row::after {
+    width: 100%;
+    height: 1px;
+    left: 0;
+  }
+
+  .detail-title {
+    width: 70px;
+    font-size: 12px;
+  }
+
+  .detail-text {
+    width: calc(100% - 70px);
+    font-size: 12px;
+    line-height: 2;
+  }
+}
+
+
+
+
+/* ===============================
+   Pager Area
+=============================== */
+
+.pager-area {
+  margin-top: 160px;
+  text-align: center;
+}
+
+/* back / next ボタン横並び */
+.pager-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 140px; 
+  margin-bottom: 60px;
+}
+
+.pager-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 110px;
+  border: 2px solid #000;
+  border-radius: 13px;    
+  font-size: 26px;
+  font-family: "Sofia Pro Variable", sans-serif;
+  letter-spacing: 0.12em;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+.pager-btn:hover {
+  opacity: 0.6;
+}
+
+/* 一覧へ戻るリンク */
+.back-list {
+  display: inline-block;
+  font-size: 15px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  letter-spacing: 0.12em;
+  color: #000;
+  text-decoration: none;
+  position: relative;
+}
+
+.back-list::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 12px;
+  margin: 10px 0 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyMDAgMjAnPjxwYXRoIGQ9J00wIDEwIEM2MCAwLCAxMjAgMjAsIDIwMCAxMCcgc3Ryb2tlPSdibGFjaycgc3Ryb2tlLXdpZHRoPScyJyBmaWxsPSdub25lJy8+PC9zdmc+");
+  transition: width 0.5s ease-out;
+}
+
+
+.back-list:hover::after {
+  width: 80px;
+}
+
+
+
+
+
+.back-next-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 203px;
+    height: 56px;
+    font-size: 15px;
+    font-family: "Sofia Pro Variable", sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 13px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+
+
+.back-next-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+
+  /* back / next ボタン（SP） */
+  .back-next-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 70px;
+    margin-top: 100px;
+  }
+
+  .back-next-btn {
+    width: 159px; 
+    height: 44px;
+    font-size: 14px;
+    border-width: 1.5px;
+    border-radius: 13px;
+  }
+
+  /* 一覧へ戻る（SP） */
+  .back-list {
+    font-size: 14px;   
+  }
+
+  /* SPでは最初から波線を表示＆hover無効扱い */
+  .back-list::after {
+    width: 80px !important;   
+  }
+
+  .back-list:hover::after {
+    width: 80px !important;  
+  }
+
+}
+
+
+
+
+
+/* ===== contact セクション ===== */
+.contact {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 226px;
+}
+
+.contact-text {
+  max-width: 600px;
+  margin: 264px auto 0;
+  padding: 0 10px;
+}
+
+.contact-text h2 {
+  font-size: 25px;
+  margin-bottom: 47px;
+}
+.contact-text p {
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 2;
+}
+
+.contact-btn {
+  display: inline-block;
+  width: 280px;
+  height: 54px;
+  line-height: 54px;
+  border-radius: 13px;
+  border: 2px solid #000;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+
+  /* ▼ contact セクション全体 */
+  .contact {
+    padding-bottom: 78px;  
+    padding-top: 0px;
+  }
+
+
+  .contact-text h2 {
+    font-size: 20px;
+    margin-bottom: 31px;
+    margin-top: 115px;
+    font-weight: 600;
+  }
+
+ 
+  .contact-text p {
+    font-size: 14px;
+    line-height: 2.14;
+    margin-bottom: 48px;
+  }
+
+  /* ▼ ボタン（16px） */
+  .contact-btn {
+    width: 280px;     
+    height: 64px;     
+    line-height: 64px; 
+    font-size: 16px;
+    border-radius: 13px;
+    font-weight: 700;
+    margin: 0 auto; 
+  }
+  
+  .contact-text {
+    margin: 0 auto;
+}
+
+}
+
+
+
+ 
+/* ===== FOOTER ===== */
+.footer {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.footer svg {
+  transform: translateY(10px);
+}
+.footer__inner {
+  background-color: #47b2b2;
+}
+
+
+
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* 高さは自動で比率を保つ */
+  object-fit: none; 
+  z-index: 0;
+  pointer-events: none;
+  object-position: top;
+}
+
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+
+/* === sns・nav・pagetop === */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;  
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  position: relative; 
+}
+
+
+/* SNS */
+.sns a {
+  display: inline-block;
+  margin: 0 10px;
+}
+.sns img {
+  width: 23px;
+  height: 23px;
+  transition: opacity 0.3s;
+}
+.sns img:hover {
+  opacity: 0.7;
+}
+.sns {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+/* ナビ */
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 20px;
+}
+
+.footer-nav a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  font-family: 'Sofia Pro Variable', sans-serif;
+  font-weight: 600; /* Semi Bold */
+}
+.footer-nav {
+  margin-left: 50px;
+}
+
+
+
+/* コピーライト */
+.copy {
+  font-size: 12px;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+
+  /* footer 全体を縦並びに */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px; /* nav と SNS の間 */
+    margin: 0;
+  }
+
+  /* nav（home / about …） */
+  .footer-nav {
+    order: 1;
+    margin: 0 auto;
+  }
+
+
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    gap: 50px;           
+  }
+
+  .footer-nav a {
+    font-size: 20px;  
+  }
+
+
+  .sns {
+    order: 2;
+    gap: 70px;
+  }
+
+  .sns img {
+    width: 33px;
+    height: 33px;
+    
+  }
+
+  /* コピーライト */
+  .copy {
+    order: 3;
+    margin-top: -30px;
+  }
+
+
+}
+
+
+/* ===============================
+   Intro（制作意図上のエリア）
+=============================== */
+
+.intro-box {
+  max-width: 900px;
+  margin: 80px auto 120px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.intro-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.intro-logo img {
+  width: 140px;
+  height: auto;
+}
+
+.intro-text p {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .intro-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    gap: 30px;
+  }
+
+  .intro-logo img {
+    width: 120px;
+  }
+
+  .intro-text p {
+    font-size: 14px;
+    line-height: 2;
+  }
+}
+
+
+
+
+
+
+ 
+
+
+

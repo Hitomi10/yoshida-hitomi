@@ -1,0 +1,323 @@
+/* =============================
+   共通ラッパー
+============================= */
+.page-wrapper {
+  box-sizing: border-box;
+}
+
+.thanks-page .page-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+/* ===== THANK YOU タイトルと線 ===== */
+.thankyou-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0 auto;
+  margin-top: 300px;
+  margin-bottom: 100px;
+}
+
+.thankyou-line {
+  width: 583px;
+  height: 1px;
+  background-color: #000;
+}
+
+.thankyou-title h2 {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+}
+
+
+/* =============================
+   THANK YOU メイン
+============================= */
+.thankyou {
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+.ty-message {
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 60px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 600;
+}
+
+.ty-btn-wrap {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.ty-btn {
+  display: inline-block;
+  width: 253px;
+  height: 58px;
+  line-height: 56px;
+  border-radius: 13px;
+  background: #d9a441;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+.ty-btn:hover {
+  opacity: 0.8;
+}
+
+.ty-wave {
+  width: 100%;
+  margin-top: 100px;
+}
+
+
+/* =============================
+   THANK YOU（SP）
+============================= */
+@media (max-width: 768px) {
+  .thankyou-header {
+    margin-top: 205px; 
+  }
+
+  .thankyou-line {
+    width: 300px;
+  }
+
+  .thankyou-title h2 {
+    font-size: 20px;
+  }
+
+
+  .ty-message {
+    max-width: 440px;
+    margin: 0 auto 50px;
+    font-size: 14px;
+  }
+
+  .ty-btn {
+    width: 100%;
+    max-width: 300px;  
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+  }
+
+  .ty-btn-wrap {
+    margin-bottom: 80px;
+  }
+
+  .ty-wave {
+    margin-top: 40px;
+  }
+
+}
+
+
+
+
+
+
+ 
+/* ===== FOOTER ===== */
+.footer {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.footer svg {
+  transform: translateY(10px);
+}
+.footer__inner {
+  background-color: #47b2b2;
+}
+
+
+
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* 高さは自動で比率を保つ */
+  object-fit: none; 
+  z-index: 0;
+  pointer-events: none;
+  object-position: top;
+}
+
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+
+/* === sns・nav・pagetop === */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;  
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  position: relative; 
+}
+
+
+/* SNS */
+.sns a {
+  display: inline-block;
+  margin: 0 10px;
+}
+.sns img {
+  width: 23px;
+  height: 23px;
+  transition: opacity 0.3s;
+}
+.sns img:hover {
+  opacity: 0.7;
+}
+.sns {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+/* ナビ */
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 20px;
+}
+
+.footer-nav a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  font-family: 'Sofia Pro Variable', sans-serif;
+  font-weight: 600; /* Semi Bold */
+}
+.footer-nav {
+  margin-left: 50px;
+}
+
+
+/* コピーライト */
+.copy {
+  font-size: 12px;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+
+  /* footer 全体を縦並びに */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px; /* nav と SNS の間 */
+    margin: 0;
+  }
+
+  /* nav（home / about …） */
+  .footer-nav {
+    order: 1;
+    margin: 0 auto;
+  }
+
+
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    gap: 50px;           
+  }
+
+  .footer-nav a {
+    font-size: 20px;        
+  }
+
+ 
+  .sns {
+    order: 2;
+    gap: 70px;
+  }
+
+  .sns img {
+    width: 33px;
+    height: 33px;
+    
+  }
+
+  /* コピーライト */
+  .copy {
+    order: 3;
+    margin-top: -30px;
+  }
+
+
+}
+
+
+@media (max-width: 768px) {
+.header_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background: rgba(255, 255, 255, 0.40); /* 透明白 */
+  z-index: 900;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+}

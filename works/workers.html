@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&see portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+Antique&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/works-detail.css">
+    <link rel="stylesheet" href="https://use.typekit.net/buk8mdm.css">
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'ebc1ehs',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){
+          h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";
+        },config.scriptTimeout),
+        tk=d.createElement("script"),f=false,
+        s=d.getElementsByTagName("script")[0],a;
+        h.className+=" wf-loading";
+        tk.src='https://use.typekit.net/'+config.kitId+'.js';
+        tk.async=true;
+        tk.onload=tk.onreadystatechange=function(){
+          a=this.readyState;
+          if(f||a&&a!="complete"&&a!="loaded") return;
+          f=true; clearTimeout(t);
+          try{Typekit.load(config)}catch(e){}
+        };
+        s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const pcBtn = document.querySelector(".pc-btn");
+    const spBtn = document.querySelector(".sp-btn");
+
+    const pcImg = document.querySelector(".view-pc");
+    const spImg = document.querySelector(".view-sp");
+
+    pcBtn.addEventListener("click", () => {
+      pcBtn.classList.add("active");
+      spBtn.classList.remove("active");
+
+      pcImg.style.display = "block";
+      spImg.style.display = "none";
+    });
+
+    spBtn.addEventListener("click", () => {
+      spBtn.classList.add("active");
+      pcBtn.classList.remove("active");
+
+      pcImg.style.display = "none";
+      spImg.style.display = "block";
+    });
+  });
+</script>
+
+
+
+</head>
+
+<body id="workers">
+  <div class="header_bg"></div>
+
+
+<div class="page-wrapper">
+
+<header id="header">
+    <div class="header_inner">
+        <h1 class="logo">
+            <a href="../index.html">
+                <img src="../picture/logo 58@2x-8.png" alt="&see" />
+            </a>
+        </h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about-view.html">about</a></li>
+                <li><a href="../works-view.html">works</a></li>
+                <li><a href="../photo.html">photo</a></li>
+                <li><a href="../contact.html" class="contact-link">contact</a></li>
+            </ul>
+        </nav>
+
+        
+    <!-- SP：ハンバーガー -->
+            <div class="hamburger">
+              <img src="../picture/hamburgermenu.svg" alt="menu" />
+            </div>
+          </div>
+        </header>
+
+        <!-- SPメニュー -->
+        <div class="sp-menu">
+          <!-- バツ -->
+          <div class="close-btn">&times;</div>
+
+          <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="../about-view.html">about</a></li>
+            <li><a href="../works-view.html">works</a></li>
+            <li><a href="../photo.html">photo</a></li>
+            <li><a href="../contact.html" class="sp-contact-link">contact</a></li>
+          </ul>
+        </div>
+
+    
+  
+</header>
+
+
+<section class="works-section">
+  <div class="works-header">
+    <div class="works-line"></div>
+    <div class="works-title">
+      <h2>my works</h2>
+      <p>制作実績</p>
+    </div>
+  </div>
+</section>
+
+<h3 class="work-title">WORKERS</h3>
+
+<div class="work-detail">
+</div>
+
+
+ <!-- 左右２カラム -->
+<div class="work-inner">
+
+  <!-- 左：モックアップ -->
+  <div class="mockup">
+    <img src="../picture/works-3.png" alt="pc mockup">
+  </div>
+
+  <!-- 右：スクロール（PC/SP切替含む） -->
+  <div class="scroll-area-wrapper">
+
+    <!-- PC・SP 切替ボタン -->
+    <div class="view-switch">
+      <button class="pc-btn active">pc</button>
+      <button class="sp-btn">sp</button>
+    </div>
+
+    <!-- 画像表示部分 -->
+    <div class="scroll-area">
+      <img src="../picture/workers.jpg" class="view-pc" alt="pc view">
+      <img src="../picture/workerssp.jpg" class="view-sp" alt="sp view">
+    </div>
+
+    <!-- スクロール案内 -->
+    <div class="scroll-indicator">
+      <span>s c r o l l</span>
+      <div class="line"></div>
+    </div>
+
+  </div><!-- /scroll-area-wrapper -->
+
+</div><!-- /work-inner -->
+
+
+
+  <div class="detail-box">
+
+  <div class="detail-row">
+    <div class="detail-title">制作意図</div>
+    <div class="detail-text">
+     コワーキングスペースサイトのデザインカンプをトレースしました。<br>
+余白や配置、数値の精度にこだわり、ガイドを活用しながらコーディングを意識したデザイン制作を行いました。
+    </div>
+  </div>
+
+  <div class="detail-row">
+    <div class="detail-title">担当範囲</div>
+    <div class="detail-text">トレース</div>
+  </div>
+
+  <div class="detail-row">
+    <div class="detail-title">使用ツール</div>
+    <div class="detail-text">Illustrator</div>
+  </div>
+
+  <div class="detail-row">
+    <div class="detail-title">制作期間</div>
+    <div class="detail-text">1週間</div>
+  </div>
+
+</div>
+
+<div class="pager-area">
+
+  <div class="back-next-wrap">
+  <a href="./designcafe.html" class="back-next-btn">back</a>
+  <a href="./icecream.html" class="back-next-btn">next</a>
+</div>
+
+
+  <a href="../works-view.html" class="back-list">一覧へ戻る</a>
+
+</div>
+
+
+     <!-- contact -->
+    <section class="contact">
+  <div class="contact-text">
+    <h2>contact</h2>
+    <p>ご覧いただきありがとうございます。<br/>
+ご依頼・ご相談はこちらから承ります。<br/>
+内容確認後、3日以内にご返答いたしますので<br/>
+お気軽にお問い合わせください。
+</p>
+    <a href="../contact.html" class="contact-btn">お問い合わせはこちら</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 100" width="100%">
+  <path d="M -102.4 28 Q -22.4 28 57.6 14 Q 217.6 -14 377.6 14 Q 457.6 28 537.6 28 Q 617.6 28 697.6 14 Q 857.6 -14 1017.6 14 Q 1097.6 28 1177.6 28 Q 1257.6 28 1337.6 14 Q 1497.6 -14 1657.6 14 Q 1737.6 28 1817.6 28 L 1280 100 L 0 100 Z" fill="#47b2b2"></path>
+</svg>
+  <img src="../picture/footer.png" alt="footer" class="footer-wave">
+
+  <div class="footer__inner">
+  <div class="footer-links">
+    </div>
+  
+    <!-- SNS・ナビ・ページトップ -->
+    <div class="footer-top">
+      <div class="sns">
+        <a href="#"><img src="../picture/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="../picture/X.png" alt="X"></a>
+      </div>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="../index.html">home</a></li>
+          <li><a href="../about-view.html">about</a></li>
+          <li><a href="../works-view.html">works</a></li>
+          <li><a href="../photo.html">photo</a></li>
+          <li><a href="../contact.html" class="contact-link">contact</a></li>
+        </ul>
+      </nav>
+
+ 
+    </div>
+
+   
+    <p class="copy">© 2025 &see hitomi yoshida portfolio</p>
+  </div>
+</footer>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/hamburger.js"></script>
+
+
+
+    
+</body>
+</html>

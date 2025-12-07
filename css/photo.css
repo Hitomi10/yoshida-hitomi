@@ -1,0 +1,429 @@
+@charset "utf-8";
+
+/* 共通ラッパー */
+.page-wrapper {
+  box-sizing: border-box;
+}
+
+/* ===== タイトル部分 ===== */
+.photo-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0auto;
+  margin-top: 300px;
+}
+
+.photo-line {
+  width: 583px;
+  height: 1px;
+  background-color: #000;
+}
+
+.photo-title h2 {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+}
+
+.photo-text {
+  max-width: 900px;
+  margin: 150px auto 0;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .photo-text {
+    font-size: 14px;}
+  
+  .photo-line {
+    width: 300px;
+  }
+}
+
+
+
+/* === Photo Grid === */
+.photo-grid {
+  max-width: 1400px;
+  margin: 200px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 289px);
+  justify-content: center;
+  gap: 91px;
+  padding: 0 20px;
+}
+
+.photo-item img {
+  width: 289px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: .3s;
+}
+.photo-item img:hover {
+  opacity: 0.8;
+}
+
+/* coming soon */
+.photo-item.coming {
+  width: 289px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-item.coming span {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+   
+}
+
+
+/* ===========================
+      SP：フォト 2枚並び
+=========================== */
+@media (max-width: 768px) {
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 185px);  
+    gap: 55px;                               
+    justify-content: center;                  
+    margin-top: 100px;                       
+  }
+
+  .photo-item img {
+    width: 185px;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 13px;
+  }
+
+  .photo-item.coming {
+    width: 185px;
+    height: 185px;
+  }
+
+  .photo-item.coming span {
+    font-size: 12px;
+    
+}
+}
+
+
+
+
+
+
+
+
+/* ===== contact セクション ===== */
+.contact {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 226px;
+}
+
+.contact-text {
+  max-width: 600px;
+  margin: 264px auto 0;
+  padding: 0 20px;
+}
+
+.contact-text h2 {
+  font-size: 25px;
+  margin-bottom: 47px;
+}
+.contact-text p {
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 2;
+}
+
+.contact-btn {
+  display: inline-block;
+  width: 280px;
+  height: 54px;
+  line-height: 54px;
+  border-radius: 13px;
+  border: 2px solid #000;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #fff;
+}
+
+
+@media (max-width: 768px) {
+
+  /* ▼ contact セクション全体 */
+  .contact {
+    padding-bottom: 78px;  
+    padding-top: 0px;
+  }
+
+
+  .contact-text h2 {
+    font-size: 20px;
+    margin-bottom: 31px;
+    font-weight: 600;
+  }
+
+ 
+  .contact-text p {
+    font-size: 14px;
+    line-height: 2.14;
+    margin-bottom: 48px;
+  }
+
+  /* ▼ ボタン（16px） */
+    .contact-btn {
+    width: 280px;   
+    height: 64px;    
+    line-height: 64px; 
+    font-size: 16px;
+    border-radius: 13px;
+    font-weight: 700;
+    margin: 0 auto; 
+  }
+  }
+
+
+
+
+ 
+/* ===== FOOTER ===== */
+.footer {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.footer svg {
+  transform: translateY(10px);
+}
+.footer__inner {
+  background-color: #47b2b2;
+}
+
+
+
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* 高さは自動で比率を保つ */
+  object-fit: none; 
+  z-index: 0;
+  pointer-events: none;
+  object-position: top;
+}
+
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+
+/* === sns・nav・pagetop === */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;  
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  position: relative; 
+}
+
+
+/* SNS */
+.sns a {
+  display: inline-block;
+  margin: 0 10px;
+}
+.sns img {
+  width: 23px;
+  height: 23px;
+  transition: opacity 0.3s;
+}
+.sns img:hover {
+  opacity: 0.7;
+}
+.sns {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+/* ナビ */
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 20px;
+}
+
+.footer-nav a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  font-family: 'Sofia Pro Variable', sans-serif;
+  font-weight: 600; /* Semi Bold */
+}
+.footer-nav {
+  margin-left: 50px;
+}
+
+
+
+
+/* コピーライト */
+.copy {
+  font-size: 12px;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+
+  /* footer 全体を縦並びに */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* nav と SNS の間 */
+  }
+
+  /* nav（home / about …） */
+  .footer-nav {
+    order: 1;
+    margin: 0 auto;
+  }
+
+
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    gap: 40px;           
+  }
+
+  .footer-nav a {
+    font-size: 20px;      
+  }
+
+
+  .sns {
+    order: 2;
+  }
+
+  /* コピーライト */
+  .copy {
+    order: 3;
+    margin-top: 30px;
+  }
+
+
+
+}
+
+
+
+/* =======================
+      PHOTO MODAL
+======================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(2px); 
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 45%;
+  max-height: 90%;
+  background: #fff;
+  padding: 3px;
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 85px;
+  right: 150px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  z-index: 10000;
+}
+
+@media (max-width: 768px) {
+.header_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background: rgba(255, 255, 255, 0.40); /* 透明白 */
+  z-index: 900;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+}

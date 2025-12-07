@@ -1,0 +1,1501 @@
+@charset "utf-8";
+
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  letter-spacing: 0.1em;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page-wrapper {
+  box-sizing: border-box;
+}
+
+
+.blob-wrapper {
+  position: absolute;
+  pointer-events: none;
+  max-width: 30%; 
+  
+  
+
+ 
+  transition: top 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    left 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: top, left, transform;
+}
+
+
+.blob-wrapper img {
+  width: 75%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* ===== HEADER ===== */
+.header_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 140px;
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+}
+
+.logo img {
+  width: 186px;
+  margin-top: 110px;
+  margin-left: 10px;
+  object-fit: contain;
+}
+
+.header_nav ul {
+  display: flex;
+  gap: 50px;
+}
+
+.header_nav a {
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600; /* Semi Bold */
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+.contact-link {
+  color: #e2ab2d !important;
+}
+
+.logo img {
+  width: 180px;
+  margin-top: 80px;
+}
+
+
+/* ===== SP版：768px以下 ===== */
+@media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .header_inner {
+    padding: 12px 16px;
+  }
+
+  /* SP：ロゴ調整 */
+  .logo img {
+    width: 120px;
+    margin-top: 10px;
+  }
+
+  /* SP：ナビ非表示 */
+  .header_nav {
+    display: none;
+  }
+}
+
+/* PCでは非表示 */
+.hamburger,
+.close-icon {
+  display: none;
+}
+/* ハンバーガー ON のときロゴ消す */
+.logo.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+
+/* SPでハンバーガー表示 */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 34px;
+    right: 34px;
+    width: 60px;
+    z-index: 2000;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .hamburger.open {
+    opacity: 0;
+  }
+
+
+  /* バツ */
+  /* .close-icon {
+    display: block;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 28px;
+    height: 28px;
+    z-index: 10000;
+  } */
+
+  /* 表示時 */
+  .sp-menu.active {
+    top: 0;
+  }
+
+  /* メニュー文字 */
+  .sp-menu ul li {
+    margin: 40px 0;
+  }
+
+  .sp-menu ul li a {
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    font-family: "Sofia Pro Variable", sans-serif;
+    font-weight: 700;
+  }
+
+  /* contactだけ色変更 */
+  .sp-menu .sp-contact-link {
+    color: #eba700 !important;
+  }
+
+  /* バツ */
+  .close-btn {
+    position: absolute;
+    top: 21px;
+    right: 56px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .header_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px; 
+  backdrop-filter: blur(1px); 
+  background: rgba(255, 255, 255, 0.4); /* ← うっすら白 */
+  z-index: 900; 
+}
+}
+
+/* ===== main visual ===== */
+
+.main-visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 793px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.main-visual img {
+  width: 650px;
+  object-fit: cover;
+}
+
+
+
+@media (max-width: 1200px) {
+  .main-visual img {
+    width: 680px;
+    max-width: 80%;
+    height: auto;
+  }
+
+  .main-visual {
+    padding-top: 210px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ===== パス（アウトライン） ===== */
+
+.mv-outline {
+  position: absolute;
+  pointer-events: none;
+}
+
+.main-img {
+  z-index: 2;
+}
+
+.outline1 {
+  width: 150px;
+  top: -17px;
+  left: 45px;
+  animation: orbit1 6s ease-in-out infinite;
+  height: auto;
+  z-index: 3; /* 前 */
+  max-width: 80%;
+}
+
+.outline2 {
+  width: 200px;
+  top: 150px;
+  left: 173px;
+  animation: orbit2 7s ease-in-out infinite;
+  height: auto;
+  z-index: 1; /* 後ろ */
+  max-width: 72%;
+}
+
+@keyframes orbit1 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(8px, -5px);
+  }
+  50% {
+    transform: translate(12px, 8px);
+  }
+  75% {
+    transform: translate(5px, 12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes orbit2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-7px, -4px);
+  }
+  50% {
+    transform: translate(-12px, 7px);
+  }
+  75% {
+    transform: translate(-5px, 10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-visual .outline1 {
+    width: 77%;
+    left: 7%;
+    top: 33%;
+  }
+
+  .main-visual .outline2 {
+    width: 69%;
+    left: 24%;
+    top: 61%;
+  }
+
+  .main-img {
+    width: 80%;
+    left: 10%;
+  }
+
+  .main-visual img {
+        width: 650px;
+        max-width: 79%;
+        height: auto;
+        margin-top: -157px;
+  }
+  .main-visual .concept-title {
+    width: 500px;
+  }
+  
+}
+
+
+@media (max-width: 768px) {
+    .main-visual img {
+      margin-top: -87px;
+    }
+
+    .main-visual .outline1 {
+    width: 77%;
+    left: 7%;
+    top: 31%;
+    }
+
+  .main-visual .outline2 {
+    width: 69%;
+    left: 23%;
+    top: 57%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  
+  .main-visual .outline1 {
+    width: 78%;
+    left: 7%;
+    top: 34%;
+  }
+
+  /* アウトライン2（後ろの線） */
+  .main-visual .outline2 {
+    width: 70%;
+    left: 23%;
+    top: 62%;
+  }
+
+  
+  .main-visual img {
+    margin-top: -60px; 
+  }
+
+}
+
+
+
+
+
+/* ===== スクロールインジケーター ===== */
+.scroll-indicator {
+  position: absolute;
+  right: 30px;
+  top: 100%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* テキスト scroll */
+.scroll-indicator span {
+  writing-mode: vertical-rl;
+  font-size: 17px;
+  letter-spacing: 0.18em;
+  margin-bottom: 10px;
+  display: inline-block;
+  opacity: 0.8;
+}
+
+.scroll-line {
+  position: relative;
+  width: 1px;
+  height: 120px;
+  background: #000;
+  margin: 0 auto;
+}
+
+.scroll-line::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #000;
+  opacity: 0;
+
+  animation: circleMove 2.6s ease-in-out infinite,
+    circleFade 2.6s ease-in-out infinite;
+}
+
+/* 丸の移動 */
+@keyframes circleMove {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 116px;
+  }
+}
+
+/* 丸のフェード */
+@keyframes circleFade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 930px) {
+  .scroll-indicator {
+    position: absolute;
+    right: 10px;
+    top: 120%;
+  }
+
+  .scroll-indicator span {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+  }
+
+  .scroll-line {
+    height: 119px;
+    width: 1px;
+  }
+}
+
+/* ===== consept ===== */
+.concept {
+  position: relative;
+  text-align: center;
+}
+
+.concept-title {
+  position: fixed;
+  top: 18%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  max-width: 590px;
+  width: 100%;
+  z-index: 30;
+  pointer-events: none;
+  margin-bottom: 89px;
+  margin-top: 319px;
+  transition: all 0.3s ease;
+}
+.concept-title.is-fixed {
+  position: fixed;
+  transition: all 0.3s ease;
+}
+.concept-title.is-absolute {
+  position: absolute;
+  bottom: -600px;
+  top: auto;
+}
+
+.concept p {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 2.94;
+  font-size: 18px;
+  color: black;
+  letter-spacing: 0.1em;
+  margin-bottom: 258px;
+  margin-top: 500px;
+}
+
+
+
+@media (max-width: 1200px) {
+.concept-title {
+    position: absolute; 
+    top: 78%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    width: 90%;
+}
+
+   .concept p {
+   padding-top: 7%;
+}
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .concept p {
+    font-size: 16px;
+    line-height: 2.29;
+    letter-spacing: 0.1em;
+    padding: 0 24px;
+    text-align: center;
+    padding-bottom: 200px;
+    padding-top: 70px;
+  
+  }
+
+  .concept-title {
+    top: 58%;    
+    left: 50%;
+    transform: translateX(-50%); 
+    max-width: 300px;
+    width: 50%;
+  }
+}
+
+/* sectionタイトル（about, works共通） */
+.section-title {
+  display: flex;
+  align-items: center;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+}
+
+
+
+.about-content {
+  display: flex;
+  gap: 185px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.about-title span {
+  position: relative;
+  left: 4%; 
+}
+
+
+
+.about-text {
+  position: relative;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 2.61;
+  font-size: 16px;
+  margin-top: 190px;
+  max-width: 460px;
+}
+
+.about-text .view-more {
+  position: absolute;
+  bottom: -60px;
+  right: -50px;
+  display: inline-block;
+}
+
+.about-image img {
+  width: 289px;
+  height: 289px;
+  border-radius: 13px;
+  object-fit: cover;
+  margin-top: 87px;
+}
+
+/* ===========================
+    ABOUT（SPレイアウト）
+=========================== */
+@media (max-width: 768px) {
+  .about {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  /* タイトルと線の位置調整（線は残す） */
+  .about-title {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    width: fit-content;
+  }
+
+  .about-title.right-line::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 1px;
+    background: #000;
+    margin-left: 12px;
+  }
+
+  /* 縦並びレイアウト */
+  .about-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-image img {
+    width: 280px;
+    border-radius: 13px;
+    margin-top: 80px;
+    margin-bottom: 44px;
+  }
+
+  .about-image {
+    margin-left: auto;
+    margin-right: 50px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 2.2;
+    max-width: 334px;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .about-text .view-more {
+    font-size: 15px;
+    margin-top: 40px;
+  }
+
+  /* .view-more {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    font-family: 'Sofia Pro Variable', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+  } */
+}
+
+/* worksセクション */
+.works {
+  position: relative;
+  max-width: 1020px;
+  margin: 300px auto 300px;
+}
+
+.works-gallery {
+  display: flex;
+  gap: 96px;
+  justify-content: center;
+  margin-top: 190px;
+  padding: 0 20px;
+}
+
+.works-item {
+  max-width: 250px;
+  height: auto;
+}
+
+.works-item img {
+max-width: 250px;
+height: auto;
+}
+
+
+.works-text {
+  margin-top: 73px;
+  font-size: 15px;
+  line-height: 2.4;
+  letter-spacing: 0.1em;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  margin-left: 50px;
+  margin-bottom: 12px;
+}
+
+.works-title span {
+  position: relative;
+  left: 4%; 
+}
+
+
+/* ===== Works SP版：画像を左右にズラす ===== */
+@media (max-width: 768px) {
+  .works-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .works-item img {
+    width: 280px;
+    height: auto;
+    border-radius: 13px;
+  }
+
+  /* 1枚目：少し左へ */
+  .works-item:nth-child(1) img {
+    margin-left: -100px;
+  }
+
+  /* 2枚目：少し右へ */
+  .works-item:nth-child(2) img {
+    margin-left: 100px;
+  }
+
+  /* 3枚目：少し左へ（弱め） */
+  .works-item:nth-child(3) img {
+    margin-left: -100px;
+  }
+
+  /* タイトル位置を中央寄せ */
+  .works-title {
+    text-align: center;
+    margin: 0 auto 50px;
+    width: fit-content;
+    position: relative;
+  }
+
+  /* 右に短い線を付ける（aboutと同じ仕様） */
+  .works-title.right-line::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 120px; /* ←SP用の短い線 */
+    height: 1px;
+    background: #000;
+    margin-left: 12px;
+  }
+
+  /* works 全体の余白調整 */
+  .works {
+    padding: 0 20px;
+  }
+
+  .works-text {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 67px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 2.14;
+  }
+
+  .works-view-more {
+    position: relative;
+    display: inline-block;
+    font-family: "Sofia Pro Variable", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .works-view-more,
+  .photo-view-more {
+    display: block;
+    text-align: right;
+  }
+}
+
+/* photoセクション */
+.photo {
+  max-width: 1020px;
+  margin-bottom: 300px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.photo-gallery {
+  display: flex;
+  gap: 96px;
+  justify-content: center;
+  margin-top: 190px;
+  padding: 0 20px;
+}
+
+.photo-item {
+  max-width: 250px;
+  height: auto;
+}
+
+.photo-item img {
+  max-width: 250px;
+  height: auto;
+}
+
+
+.photo-title span {
+  position: relative;
+  left: 4%;
+}
+
+
+.photo-text {
+  margin-top: 73px;
+  font-size: 15px;
+  line-height: 2.4;
+  letter-spacing: 0.1em;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+/* ===== Photo SP版：画像を右→左→右にずらす ===== */
+@media (max-width: 768px) {
+  .photo-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .photos-item {
+    width: 280px;
+    height: 280px;
+    overflow: hidden; /* はみ出しカット */
+    border-radius: 13px;
+  }
+
+  .photos-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 13px;
+  }
+
+  .photo-text {
+          margin-left: auto;
+        margin-right: auto;
+        margin-top: 67px;
+        text-align: left;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 2.14;
+  }
+
+  .photo-view-more {
+    position: relative;
+    display: inline-block;
+    font-family: "Sofia Pro Variable", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+   .photo {
+    padding: 0 20px;
+  }
+
+
+  /* ------- 右 → 左 → 右 ------- */
+
+  /* 1枚目：右へ */
+  .photos-item:nth-child(1) {
+    margin-left: 200px;
+  }
+
+  /* 2枚目：左へ */
+  .photos-item:nth-child(2) {
+    margin-left: -108px;
+  }
+
+  /* 3枚目：右へ（弱め） */
+  .photos-item:nth-child(3) {
+    margin-left: 200px;
+  }
+
+  .photo-view-more {
+    display: block;
+    text-align: right;
+  }
+}
+
+/* contact セクション） */
+.contact {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  padding: 200px 0 500px;
+}
+
+.contact-bg {
+  position: absolute;
+  width: 791px;
+  height: 585px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* テキスト本体（背景より前） */
+.contact-text {
+  position: relative;
+  z-index: 2; /* 背景より前に */
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 250px;
+}
+
+.contact-text h2 {
+  font-size: 25px;
+  margin-bottom: 40px;
+  font-family: "Sofia Pro Variable", sans-serif;
+}
+
+.contact-text p {
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 40px;
+}
+
+/* ボタン */
+.contact-btn {
+  display: inline-block;
+  width: 280px;
+  height: 54px;
+  line-height: 54px;
+  border-radius: 13px;
+  border: 2px solid #000;
+  background: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .contact-bg img {
+    width: 700px;
+    height: auto;
+  }
+
+  .contact {
+    padding: 20px;
+    margin-top: 69px;
+    margin-bottom: 400px !important;
+  }
+
+  .contact-text {
+    top: 30px;
+  }
+
+  .contact-text p {
+    font-size: 14px;
+  }
+  .contact-text h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-btn {
+    width: 280px;
+    height: 64px;
+    line-height: 64px;
+    font-size: 16px;
+    border-radius: 13px;
+    font-weight: 700;
+    margin: 0 auto;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.footer svg {
+  transform: translateY(10px);
+}
+.footer__inner {
+  background-color: #47b2b2;
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* 高さは自動で比率を保つ */
+  object-fit: none;
+  z-index: 0;
+  pointer-events: none;
+  object-position: top;
+}
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* === sns・nav・pagetop === */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  position: relative;
+}
+
+/* SNS */
+.sns a {
+  display: inline-block;
+  margin: 0 10px;
+}
+.sns img {
+  width: 23px;
+  height: 23px;
+  transition: opacity 0.3s;
+}
+.sns img:hover {
+  opacity: 0.7;
+}
+.sns {
+  display: flex;
+  gap: 20px;
+}
+
+/* ナビ */
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 20px;
+}
+
+.footer-nav a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600; /* Semi Bold */
+}
+.footer-nav {
+  margin-left: 50px;
+}
+
+/* ページトップ */
+.page-top {
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+  position: absolute;
+  right: -170px;
+  z-index: 9999;
+}
+
+.page-top-btn img {
+  pointer-events: auto;
+}
+
+/* ページトップ画像を大きくする */
+.page-top img {
+  width: 150px;
+  height: auto;
+}
+.page-top img:hover {
+  opacity: 0.8;
+}
+
+/* ▼▼ ページトップロゴ 回転アニメーション ▼▼ */
+.page-top-btn img {
+  width: 150px;
+  height: auto;
+  animation: rotateCircle 12s linear infinite; /* ← 回転 */
+  transform-origin: center center;
+  display: block;
+}
+
+/* hoverで少し速くする（任意） */
+.page-top-btn img:hover {
+  animation-duration: 6s;
+}
+
+/* 回転のキーアニメ */
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* コピーライト */
+.copy {
+  font-size: 12px;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1245px) {
+  .page-top {
+    bottom: -130px;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* footer 全体を縦並びに */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px; /* nav と SNS の間 */
+    margin: 0;
+  }
+
+  /* nav（home / about …） */
+  .footer-nav {
+    order: 1;
+    margin: 0 auto;
+  }
+
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .footer-nav a {
+    font-size: 20px;
+  }
+
+  .sns {
+    order: 2;
+    gap: 70px;
+  }
+
+  .sns img {
+    width: 33px;
+    height: 33px;
+  }
+
+  /* コピーライト */
+  .copy {
+    order: 3;
+    margin-top: -30px;
+  }
+
+  .page-top {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+
+    transform: translateY(-50%);
+    width: 130px;
+  }
+
+  .page-top img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ====== 共通タイトル ====== */
+.section-title {
+  display: flex;
+  align-items: center;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* ====== about / photo → 左文字＋右線 ====== */
+
+.about .section-title.right-line,
+.photo .section-title.right-line {
+  padding-right: 0;
+  margin-left: 250px;
+}
+
+.section-title.right-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  background: #000;
+  /* ★ 線の長さを固定 871px */
+  width: calc(100vw - 21vw);
+  left: 15vw;
+}
+
+@media screen and (max-width: 1600px) {
+  .section-title.right-line::after {
+    width: 1000px;
+    right: -20px;
+  }
+}
+@media screen and (max-width: 1380px) {
+  .section-title.right-line::after {
+    width: 870px;
+    right: auto;
+    left: 120px;
+  }
+}
+
+/* ===== works（左線＋右タイトル） ===== */
+.section-title.left-line {
+  position: relative;
+  margin-left: 250px; /* 文字位置はabout/photoと揃える */
+  padding-left: 40px;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+/* --- PC標準（1400px前後） --- */
+.section-title.left-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  background: #000;
+
+  width: 1200px;
+
+  right: 100%;
+}
+
+/* --- 1600px 以下 --- */
+@media screen and (max-width: 1600px) {
+  .section-title.left-line::before {
+    width: 1000px;
+    right: 100%;
+  }
+}
+
+/* --- 1380px 以下 --- */
+@media screen and (max-width: 1380px) {
+  .section-title.left-line {
+    margin-left: 120px; /* 文字を少し左へ寄せる（左右バランス調整） */
+    padding-left: 40px;
+  }
+  .section-title.left-line::before {
+    width: 870px;
+    right: 20%;
+  }
+  .works-title span {
+    position: relative;
+    left: 80%;
+  }
+}
+
+
+
+/* ===== SPメニュー（上からスライド）===== */
+.sp-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84vh;
+  background: #00b4b2;
+  transition: 0.4s ease;
+  z-index: 999;
+  padding-top: 120px;
+  text-align: center;
+}
+
+/* SPメニュー contact だけ色変更 */
+.sp-menu .sp-contact-link {
+  color: #eba700 !important;
+}
+
+/* 表示時 */
+.sp-menu.active {
+  top: 0;
+}
+
+/* メニュー文字 */
+.sp-menu ul li {
+  margin-bottom: 43px;
+  margin-top: 43px;
+}
+
+.sp-menu ul li a {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 700 !important;
+}
+/* 閉じるボタン */
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 22px;
+  right: 51px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* ▼ 共通スタイル */
+.view-more,
+.works-view-more,
+.photo-view-more {
+  position: relative;
+  display: inline-block;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  line-height: 1;
+  right: -85%;
+}
+
+/* ▼ 波線（共通） */
+.view-more::after,
+.works-view-more::after,
+.photo-view-more::after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+
+  width: 0;
+  height: 6px;
+
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMjAwIDE4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yIDkgQzM1IDIsIDcwIDE2LCAxMDUgOSBDMTM1IDIsIDE2NSAxNiwgMTk4IDkiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+PC9zdmc+");
+  background-size: 90px auto;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transition: width 0.45s ease, opacity 0.25s ease;
+
+
+  left: 0;
+}
+
+
+.view-more::after {
+  left: 0;
+}
+
+/* ▼ works/photo は右端に“配置”だけする（動きは left→right のまま） */
+.works-view-more::after,
+.photo-view-more::after {
+  right: 0;
+}
+
+
+.view-more:hover::after,
+.works-view-more:hover::after,
+.photo-view-more:hover::after {
+  width: 90px;
+  opacity: 1;
+}
+
+
+/* loading画面 */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: #5ab1b1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  text-align: center;
+}
+
+/* ロゴ */
+.loading-logo {
+  width: 230px;
+  opacity: 0;
+  animation: logoFade 1s forwards;
+  margin-bottom: 80px;
+}
+@keyframes logoFade {
+  to { opacity: 1; }
+}
+
+/* 白線（黒線より上にくる） */
+.real-wave-wrap {
+  width: 100%;               
+  opacity: 0;
+  transition: opacity .5s ease;
+  margin: -10px auto 40px;     /* 上下余白の微調整 */
+}
+
+
+#wavePath {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: -2000;
+}
+
+/* 黒線 */
+.black-line {
+  width: 100%;                
+  height: 1.5px;
+  background: #000;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity .5s;
+  margin: 0 auto 0;
+  position: relative;
+  margin-top: 5px;
+}
+
+
+/* 黒い丸 */
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 0%;
+}
+
+/* % */
+#percent {
+  margin-top: -50px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+
+.loading-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
+
+.black-line,
+.real-wave-wrap {
+    width: 40%; /* 120% や 150% にしてもズレない */
+    max-width: 1400px; /* ←デカすぎ防止（任意） */
+}
+
+
+
+

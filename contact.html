@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&see portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+Antique&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/hamburger.css">
+
+    <link rel="stylesheet" href="https://use.typekit.net/buk8mdm.css">
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'ebc1ehs',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){
+          h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";
+        },config.scriptTimeout),
+        tk=d.createElement("script"),f=false,
+        s=d.getElementsByTagName("script")[0],a;
+        h.className+=" wf-loading";
+        tk.src='https://use.typekit.net/'+config.kitId+'.js';
+        tk.async=true;
+        tk.onload=tk.onreadystatechange=function(){
+          a=this.readyState;
+          if(f||a&&a!="complete"&&a!="loaded") return;
+          f=true; clearTimeout(t);
+          try{Typekit.load(config)}catch(e){}
+        };
+        s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+</head>
+
+
+<body>
+
+<div class="header_bg"></div>
+
+<div class="page-wrapper">
+
+<header id="header">
+    <div class="header_inner">
+        <h1 class="logo">
+            <a href="index.html">
+                <img src="./picture/logo 58@2x-8.png" alt="&see" />
+            </a>
+        </h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="./index.html">home</a></li>
+                <li><a href="./about-view.html">about</a></li>
+                <li><a href="./works-view.html">works</a></li>
+                <li><a href="./photo.html">photo</a></li>
+                <li><a href="./contact.html" class="contact-link">contact</a></li>
+            </ul>
+        </nav>
+                   <!-- ハンバーガー -->
+    <div class="hamburger">
+      <img src="./picture/hamburgermenu.svg" alt="menu">
+      <span class="close-icon"></span>
+    </div>
+    </div>
+</header>
+
+
+    <!-- SPメニュー -->
+<div class="sp-menu">
+  <div class="close-btn">×</div>
+  <ul>
+    <li><a href="index.html">home</a></li>
+    <li><a href="about-view.html">about</a></li>
+    <li><a href="works-view.html">works</a></li>
+    <li><a href="photo.html">photo</a></li>
+    <li><a href="contact.html" class="sp-contact-link">contact</a></li>
+  </ul>
+</div>
+
+
+<section class="contact-section">
+  <div class="contact-header">
+    <div class="contact-line"></div>
+    <div class="contact-title">
+      <h2>contact</h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-page" id="contact">
+  <div class="contact-page-inner">
+
+    <!-- あいさつ文 -->
+  <div class="contact-page-lead">
+  <p>ご覧いただき、ありがとうございます。</p>
+  <p>お仕事のご依頼、料金のご相談など、お気軽にこちらの</p>
+  <p>フォームよりお送りください。</p>
+  <p>内容を確認後、２営業日以内にご返信いたします。</p>
+  <p>小さなことでもお問い合わせをお待ちしております。</p>
+</div>
+
+
+
+
+  
+
+    <!-- ★★ Googleフォームへ送信する本物のフォーム ★★ -->
+    <form
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScjeaSEgF6fuXiXmtg64kGFuhy-TXf9Gq4Ipaa3v15668jyoQ/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted=true;"
+      class="contact-page-form"
+    >
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">お名前 <span class="required">*</span></label>
+          <input type="text" id="name" name="entry.1313479936" required>
+        </div>
+
+        <div class="form-group">
+          <label for="kana">フリガナ <span class="required">*</span></label>
+          <input type="text" id="kana" name="entry.939149279" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">メールアドレス <span class="required">*</span></label>
+          <input type="email" id="email" name="entry.386185178" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tel">電話番号</label>
+          <input type="tel" id="tel" name="entry.95849668">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+        <textarea id="message" name="entry.1214446706" required></textarea>
+      </div>
+
+      <div class="contact-page-btn-wrap">
+        <button type="submit" class="contact-page-btn">送信する</button>
+      </div>
+
+    </form>
+
+    <!-- ★★ Googleフォーム送信用：非表示 iframe ★★ -->
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+    <script>
+      let submitted = false;
+      document.addEventListener("DOMContentLoaded", () => {
+        const iframe = document.querySelector("iframe[name='hidden_iframe']");
+        iframe.addEventListener("load", () => {
+          if (submitted) {
+            window.location.href = "thankyou.html";
+          }
+        });
+      });
+    </script>
+
+  </div>
+
+
+   <footer class="footer">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 100" width="100%">
+  <path d="M -102.4 28 Q -22.4 28 57.6 14 Q 217.6 -14 377.6 14 Q 457.6 28 537.6 28 Q 617.6 28 697.6 14 Q 857.6 -14 1017.6 14 Q 1097.6 28 1177.6 28 Q 1257.6 28 1337.6 14 Q 1497.6 -14 1657.6 14 Q 1737.6 28 1817.6 28 L 1280 100 L 0 100 Z" fill="#47b2b2"></path>
+</svg>
+  <img src="./picture/footer.png" alt="footer" class="footer-wave">
+
+  <div class="footer__inner">
+  <div class="footer-links">
+    </div>
+
+  
+    <!-- SNS・ナビ・ページトップ -->
+    <div class="footer-top">
+      <div class="sns">
+        <a href="#"><img src="./picture/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="./picture/X.png" alt="X"></a>
+      </div>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="./index.html">home</a></li>
+          <li><a href="./about-view.html">about</a></li>
+          <li><a href="./works-view.html">works</a></li>
+          <li><a href="./photo.html">photo</a></li>
+          <li><a href="./contact.html" class="contact-link">contact</a></li>
+        </ul>
+      </nav>
+
+    
+    </div>
+
+   
+    <p class="copy">© 2025 &see hitomi yoshida portfolio</p>
+  </div>
+</footer>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/hamburger.js"></script>
+<script src="./js/pagetop.js"></script>
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,449 @@
+@charset "utf-8";
+
+/* 共通ラッパー */
+.page-wrapper {
+  box-sizing: border-box;
+}
+
+/* ===== タイトル部分 ===== */
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0auto;
+  margin-top: 300px;
+  margin-bottom: 200px;
+}
+
+.contact-line {
+  width: 583px;
+  height: 1px;
+  background-color: #000;
+}
+
+.contact-title h2 {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 600;
+}
+
+
+
+
+/* ===== contact-page 全体 ===== */
+.contact-page {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contact-page-inner {
+   width: 100%;
+  max-width: 700px; 
+  margin: 0 auto;
+}
+
+/* あいさつ文 */
+.contact-page-lead {
+  max-width: 650px;
+  margin: 150px auto 0;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 2;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact-page-lead p + p {
+  margin-top: 12px;
+}
+
+
+/* フォーム全体 */
+.contact-page-form {
+  margin-top: 200px;
+  padding: 0 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 32px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "zen-kaku-gothic-new", sans-serif;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+/* 入力欄 */
+input,
+textarea {
+  width: 100%;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 13px;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  box-sizing: border-box;
+  letter-spacing: 0.03em;
+}
+
+textarea {
+  height: 220px;
+  resize: vertical;
+}
+
+/* ボタン */
+.contact-page-btn-wrap {
+  text-align: center;
+  margin-top: 60px;
+  
+}
+
+.contact-page-btn {
+  display: inline-block;
+  width: 423px;
+  height: 58px;
+  line-height: 56px;
+  border-radius: 13px;
+  background: #d9a441;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  margin-bottom: 272px;
+   
+}
+
+.contact-page-btn:hover {
+  opacity: 0.8;
+}
+
+
+.required {
+  color: #ff4c4c;
+}
+
+
+@media (max-width: 768px) {
+  .contact-page-lead {
+    width: 401px;   
+    margin: 40px auto;    
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 2;   
+    text-align: center;
+  }
+
+
+
+  .contact-page-inner {
+    width: 90%;
+    max-width: 350px; 
+    margin: 0 auto;
+  }
+
+ 
+  .form-row {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+ 
+  label {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 13px;
+    font-size: 14px;
+  }
+
+  textarea {
+    height: 160px;
+  }
+
+
+  .contact-page-btn {
+    width: 100%;
+    max-width: 300px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+    margin: 40px auto 120px;
+  }
+
+  .contact-line {
+    width: 300px;
+}
+}
+
+
+
+
+
+
+
+
+
+/* ===== FOOTER ===== */
+.footer {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.footer svg {
+  transform: translateY(10px);
+}
+.footer__inner {
+  background-color: #47b2b2;
+}
+
+
+
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* 高さは自動で比率を保つ */
+  object-fit: none; 
+  z-index: 0;
+  pointer-events: none;
+  object-position: top;
+}
+
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.footer-links {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+
+/* === sns・nav・pagetop === */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;  
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  position: relative; 
+}
+
+
+/* SNS */
+.sns a {
+  display: inline-block;
+  margin: 0 10px;
+}
+.sns img {
+  width: 23px;
+  height: 23px;
+  transition: opacity 0.3s;
+}
+.sns img:hover {
+  opacity: 0.7;
+}
+.sns {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+/* ナビ */
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 20px;
+}
+
+.footer-nav a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  font-family: 'Sofia Pro Variable', sans-serif;
+  font-weight: 600; /* Semi Bold */
+}
+.footer-nav {
+  margin-left: 50px;
+}
+
+
+/* コピーライト */
+.copy {
+  font-size: 12px;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+
+  /* footer 全体を縦並びに */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* nav と SNS の間 */
+  }
+
+  /* nav（home / about …） */
+  .footer-nav {
+    order: 1;
+    margin: 0 auto;
+  }
+
+
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 40px;           
+  }
+
+  .footer-nav a {
+    font-size: 20px;        
+  }
+
+  
+  .sns {
+    order: 2;
+  }
+
+  /* コピーライト */
+  .copy {
+    order: 3;
+    margin-top: 30px;
+  }
+
+   
+
+}
+
+
+
+
+
+/* ===== SPメニュー ===== */
+.sp-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84vh;
+  background: #00b4b2;   
+  transition: 0.4s ease;
+  z-index: 9999;
+  padding-top: 120px;
+  text-align: center;
+}
+
+/* 表示時 */
+.sp-menu.active {
+  top: 0;
+}
+
+/* メニュー文字 */
+.sp-menu ul li {
+  margin: 40px 0;
+}
+
+.sp-menu ul li a {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  font-family: "Sofia Pro Variable", sans-serif;
+  font-weight: 700;
+}
+
+/* contactだけ色変える */
+.sp-menu .sp-contact-link {
+  color: #eba700 !important;
+}
+
+/* ✨ バツボタン */
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 22px;
+  right: 51px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* SPでハンバーガー出す */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 34px;
+    right: 34px;
+    width: 60px;
+    z-index: 2000;
+    cursor: pointer;
+  }
+
+  .hamburger.open {
+    opacity: 0;
+  }
+}
+
+
+
+
